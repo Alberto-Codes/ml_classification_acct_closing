@@ -17,14 +17,18 @@ def download_kaggle_data(dataset_name, destination_folder):
     # Create kaggle.json file dynamically
     kaggle_json_path = os.path.expanduser("~/.kaggle")
     os.makedirs(kaggle_json_path, exist_ok=True)
-    with open(os.path.join(kaggle_json_path, "kaggle.json"), "w") as f:
+    kaggle_json_file = os.path.join(kaggle_json_path, "kaggle.json")
+    with open(kaggle_json_file, "w") as f:
         json.dump(kaggle_json_content, f)
+
+    # Change UNIX permissions of kaggle.json file
+    os.chmod(kaggle_json_file, 0o600)
 
     # Make sure the destination folder exists
     os.makedirs(destination_folder, exist_ok=True)
 
     # Use subprocess to download the dataset using Kaggle API
-    command = f"kaggle datasets download -d {dataset_name} -p {destination_folder} --unzip"
+    command = f"pipenv run kaggle datasets download -d {dataset_name} -p {destination_folder} --unzip"
     try:
         subprocess.run(command, check=True, shell=True)
     except subprocess.CalledProcessError as e:
