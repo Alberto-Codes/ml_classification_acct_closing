@@ -11,6 +11,7 @@ scikit-learn = "*"
 xgboost = "*"
 mlflow = "*"
 jupyter = "*"
+seaborn = "*"
 
 [dev-packages]
 black = "*"
