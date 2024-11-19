@@ -12,7 +12,8 @@
 				"GitHub.copilot-chat",
 				"mechatroner.rainbow-csv",
 				"github.vscode-github-actions",
-				"ms-toolsai.jupyter"
+				"ms-toolsai.jupyter",
+				"ms-vscode-remote.remote-wsl"
 			]
 		},
 		"settings": {
