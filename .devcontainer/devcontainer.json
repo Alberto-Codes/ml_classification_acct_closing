@@ -11,7 +11,8 @@
 				"ms-azuretools.vscode-docker",
 				"GitHub.copilot-chat",
 				"mechatroner.rainbow-csv",
-				"github.vscode-github-actions"
+				"github.vscode-github-actions",
+				"ms-toolsai.jupyter"
 			]
 		},
 		"settings": {
