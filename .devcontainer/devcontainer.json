@@ -10,7 +10,8 @@
 				"ms-python.python",
 				"ms-azuretools.vscode-docker",
 				"GitHub.copilot-chat",
-				"mechatroner.rainbow-csv"
+				"mechatroner.rainbow-csv",
+				"github.vscode-github-actions"
 			]
 		},
 		"settings": {
