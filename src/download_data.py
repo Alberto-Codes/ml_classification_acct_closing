@@ -5,20 +5,18 @@ import json
 import subprocess
 
 def download_kaggle_data(dataset_name, destination_folder):
-    # Retrieve Kaggle credentials from environment variables
-    kaggle_username = os.getenv("KAGGLE_USERNAME")
-    kaggle_key = os.getenv("KAGGLE_KEY")
+    # Retrieve Kaggle API token from environment variable
+    kaggle_token = os.getenv("KAGGLE_API_TOKEN")
 
-    if not kaggle_username or not kaggle_key:
-        raise EnvironmentError("Kaggle API credentials not found in environment variables.")
+    if not kaggle_token:
+        raise EnvironmentError("Kaggle API token not found in environment variables.")
+
+    # Parse the JSON token
+    kaggle_json_content = json.loads(kaggle_token)
 
     # Create kaggle.json file dynamically
     kaggle_json_path = os.path.expanduser("~/.kaggle")
     os.makedirs(kaggle_json_path, exist_ok=True)
-    kaggle_json_content = {
-        "username": kaggle_username,
-        "key": kaggle_key
-    }
     with open(os.path.join(kaggle_json_path, "kaggle.json"), "w") as f:
         json.dump(kaggle_json_content, f)
 
