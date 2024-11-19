@@ -16,6 +16,9 @@ seaborn = "*"
 [dev-packages]
 black = "*"
 isort = "*"
+jupyter = "*"
+notebook = "*"
+ipykernel = "*"
 
 [requires]
 python_version = "3.12"
